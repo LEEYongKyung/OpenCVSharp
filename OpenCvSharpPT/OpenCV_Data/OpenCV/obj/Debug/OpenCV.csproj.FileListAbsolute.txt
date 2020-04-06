@@ -1,0 +1,34 @@
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCV.exe.config
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCV.exe
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCV.pdb
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.xml
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.dll.config
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.Blob.xml
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.Blob.dll.config
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.CPlusPlus.xml
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.CPlusPlus.dll.config
+C:\Users\07692\source\repos\OpenCV\OpenCV\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.csprojResolveAssemblyReference.cache
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.Form1.resources
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.Properties.Resources.resources
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.csproj.GenerateResource.Cache
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.csproj.CoreCompileInputs.cache
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.exe
+C:\Users\07692\source\repos\OpenCV\OpenCV\obj\Debug\OpenCV.pdb
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.csprojResolveAssemblyReference.cache
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.Form1.resources
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.Properties.Resources.resources
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.csproj.GenerateResource.Cache
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.csproj.CoreCompileInputs.cache
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.exe
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\obj\Debug\OpenCV.pdb
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCV.exe.config
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCV.exe
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCV.pdb
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.xml
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.dll.config
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.Blob.xml
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.Blob.dll.config
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.CPlusPlus.xml
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.CPlusPlus.dll.config
+C:\Users\07692\source\repos\OpenCV - Solution\OpenCV\bin\Debug\OpenCvSharp.Extensions.xml
