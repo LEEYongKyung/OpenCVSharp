@@ -93,8 +93,12 @@ namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
 
 
 
+
         #endregion
 
-        
+        private void btnSymmetry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

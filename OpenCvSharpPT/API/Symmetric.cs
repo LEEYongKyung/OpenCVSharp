@@ -38,6 +38,7 @@ namespace OpenCvSharpPT.API
         public void Dispose()
         {
             if (iplSymmetric != null) Cv.ReleaseImage(iplSymmetric);
+
         }
     }
 }
