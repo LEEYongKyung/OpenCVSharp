@@ -107,3 +107,5 @@ D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.frmMain
 D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.BaseForm.frmBaseChild.resources
 D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.UserControl.Sec1_srcOutput.unLoadImg.resources
 D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.exe.licenses
+D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.Popup.frmDialogBox.resources
+D:\08.ComputerVision\OpenCvSharpPT\OpenCvSharpPT\obj\Debug\OpenCvSharpPT.Popup.frmMessageBox.resources

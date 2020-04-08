@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using OpenCvSharp;
+using OpenCvSharpPT.API;
+using OpenCvSharpPT.BaseForm;
+using OpenCvSharpPT.Control;
+using OpenCvSharpPT.Entity;
+using OpenCvSharpPT.Popup;
+using OpenCvSharpPT.UserControl;
+using OpenCvSharpPT.Util;
+
 
 namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
 {
@@ -18,7 +26,7 @@ namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
         #region Variable
         private static unLoadImg _instance;
         protected String file_path = null;
-
+        IplImage ipl = null;
         #endregion
 
         #region Constructor
@@ -39,6 +47,8 @@ namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
         //    base.headerButton_Click(sender, e);
         //}
 
+
+         // Load Image 버튼
         private void btnLoadImg_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
@@ -53,22 +63,126 @@ namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
                 //선택된 파일의 풀 경로를 불러와 저장
                 textBox1.Text = file_path.Split('\\')[file_path.Split('\\').Length - 1];
                 //해당경로에서 파일명만 추출하여 textBox1에 표시
+                ipl = new IplImage(file_path, LoadMode.AnyColor);
+                pictureBoxIpl1.ImageIpl = ipl;
 
-                using (IplImage ipl = new IplImage(file_path, LoadMode.AnyColor))
-                {
-                    pictureBoxIpl1.ImageIpl = ipl;
-                }
+                //using (ipl = new IplImage(file_path, LoadMode.AnyColor))
+                //{
+                //    pictureBoxIpl1.ImageIpl = ipl;
+                //}
             }
         }
 
         private void unLoadImg_Load(object sender, EventArgs e)
         {
-           
 
 
-            using (IplImage ipl = new IplImage("D:\\08.ComputerVision\\OpenCVSharp\\OpenCVSharp\\OpenCV_Data\\apple.png", LoadMode.AnyColor))
+
+            List <CustomPairs > lstControl1 = new List<CustomPairs> ();
+
+            lstControl1.Add(new CustomPairs("X방향", "X"));
+            lstControl1.Add(new CustomPairs("Y방향", "Y"));
+            lstControl1.Add(new CustomPairs("XY방향", "XY"));
+            lueSymmetry.Properties.DataSource = lstControl1;
+            lueSymmetry.Properties.ValueMember = "Value";
+            lueSymmetry.Properties.DisplayMember = lueSymmetry.Properties.ValueMember;
+            lueSymmetry.Properties.NullText = "선택";
+
+        }
+
+        // summery
+        // 대칭 동작 
+        // summery
+        private void btnSymmetry_Click(object sender, EventArgs e)
+        {
+
+            try
             {
-                pictureBoxIpl1.ImageIpl = ipl;
+                CustomPairs select = (CustomPairs)lueSymmetry.GetSelectedDataRow();
+
+
+                if (ipl == null)
+                {
+                    uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "이미지 에러", "대상 이미지가 없습니다.");
+                    return;
+                }
+
+                if (select == null)
+                {
+                    uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "속성 선택 에러", "대칭 속성을 선택해 주시기 바랍니다.");
+                    return;
+                }
+
+
+                string strSelName = select.Name.ToString();
+                string strSelValue = select.Value.ToString();
+
+                //Symmetric Sym = new Symmetric();
+
+                //IplImage iplSymOutputImg =  Sym.SymmetryTransfrom(ipl, strSelValue);
+
+                Geometry geomtry = new Geometry();
+
+                IplImage iplGeoOut = geomtry.SymmetricTransform(ipl, strSelValue);
+
+                if (iplGeoOut == null)
+                {
+                    uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "변환 에러", "대칭 변환이 동작하지 않습니다.");
+                    return;
+                }
+                pictureBoxIpl2.ImageIpl = iplGeoOut;
+                geomtry.Dispose();
+            }
+            catch(Exception ex)
+            {
+                uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "Error", ex.Message);
+            }
+            
+            
+        }
+        //summery
+        // 회전 동작
+        //summery
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int intRotateAng = 0;
+                if (txtRotateAng == null)
+                {
+                    uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "수치 에러", "수치를 정확히 입력해 주시기 바랍니다.");
+                    return;
+
+                }
+                intRotateAng = Convert.ToInt32(txtRotateAng.EditValue.ToString());
+                Geometry geometry = new Geometry();
+
+                IplImage iplGeoOut = geometry.RotateTransform(ipl, intRotateAng);
+                if (iplGeoOut == null)
+                {
+                    uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "변환 에러", "회전 변환이 동작하지 않습니다.");
+                    return;
+                }
+                pictureBoxIpl2.ImageIpl = iplGeoOut;
+                geometry.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                uMsgBox.MessageBoxShow(uMsgBox.MessageBoxType.Error, "Error", ex.Message);
+            }
+            
+
+        }
+
+
+
+        private void tbRotateAng_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
             }
         }
         #endregion
@@ -88,17 +202,11 @@ namespace OpenCvSharpPT.UserControl.Sec1_srcOutput
         }
 
 
-
-
-
-
-
-
+      
         #endregion
+        
+        
 
-        private void btnSymmetry_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -11,7 +11,7 @@ namespace OpenCvSharpPT.API
     {
         IplImage iplSymmetric;
 
-        public IplImage Symmetry(IplImage src, String mode)
+        public IplImage SymmetryTransfrom(IplImage src, String mode)
         {
             iplSymmetric = new IplImage(src.Size, BitDepth.U8, 3);
 
